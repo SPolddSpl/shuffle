@@ -1,0 +1,7 @@
+<div *ngIf="data.draw">
+  <h1>{{data.draw.Name}}</h1>
+  <p>Дата создания: {{data.draw.CreatedDate | date: 'dd/MM/yyyy HH:MM'}}</p>
+  <p>Дата завершения: {{data.draw.DoneDate | date: 'dd/MM/yyyy HH:MM'}}</p>
+  <p>Приз: {{data.draw.Prize}}</p>
+  <p>Победитель: <span (click)="redirectToWinner(data.draw.WinnerName)">{{data.draw.WinnerName}} </span></p>
+</div>

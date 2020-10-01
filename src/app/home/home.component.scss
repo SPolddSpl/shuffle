@@ -1,0 +1,91 @@
+.main {
+    background: #303030;
+    min-height: 100vh;
+    min-width: 100vw;
+    color: #fff;
+}
+:host ::ng-deep .mat-tab-body-wrapper {
+    height: 100%;
+}
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 15px;
+    }
+}
+.search-container {
+    padding: 20px 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    button {
+        margin: 5px 0 0 0;
+    }
+}
+
+.draw-members {
+    width: 100%;
+    padding: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.draw-members-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 0 0 0;
+    overflow-x: hidden;
+    h1 {
+        color: #fff;
+    }
+    img {
+        width: 50%;
+        height: 25%;
+        border-radius: 50%;
+    }
+    button {
+        margin: 10px 0 0 0;
+    }
+}
+
+.winner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0 0 0;
+    img {
+        width: 25%;
+        height: 25%;
+        border-radius: 50%;
+    }
+}
+
+.draws-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0 0 0;
+    div {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        button {
+            margin-right: 5px;
+        }
+    }
+}

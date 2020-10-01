@@ -1,0 +1,68 @@
+<div class="main">
+
+  <h1>Hello {{userName}}</h1>
+  <mat-tab-group mat-align-tabs="center" [selectedIndex]="selectedTab">
+    <mat-tab label="Создание конкурса">
+      <div class="form-container">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Название конкурса</mat-label>
+            <input matInput placeholder="Название" [(ngModel)]="drawName" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Название приза</mat-label>
+            <input matInput placeholder="Название" [(ngModel)]="drawPrizeName" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+
+          <button mat-raised-button (click)="submitDrawForm()">Следующий шаг</button>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Список участников">
+      <div class="search-container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Instagram User Name</mat-label>
+          <input matInput type="text" [(ngModel)]="searchUser">
+        </mat-form-field>
+        <button (click)="test()" mat-raised-button color="primary">Найти пользователя</button>
+        <button (click)="submitDrawMembers()" mat-raised-button *ngIf="drawMembers.length">Подтвердить список</button>
+      </div>
+
+      <div *ngIf="drawMembers.length" class="draw-members">
+        <div *ngFor="let item of drawMembers" class="draw-members-content">
+          <h1>{{item.username.toUpperCase()}}</h1>
+          <p *ngIf="item.biography">{{item.biography}}</p>
+
+          <img [src]="item.profile_pic_url_hd" alt="">
+          <button mat-raised-button color="warning" (click)="deleteMember(item.id)">Удалить</button>
+        </div>
+
+      </div>
+    </mat-tab>
+    <mat-tab *ngIf="winnerUser" label="Победитель конкурса {{drawName}}">
+      <div class="winner-container">
+        <h1 *ngIf="winnerUser">
+          Поздравляем, победитель : {{winnerUser.username}}
+        </h1>
+        <img [src]="winnerUser.profile_pic_url_hd" alt="">
+      </div>
+    </mat-tab>
+    <mat-tab *ngIf="draws.length > 0" label="Мои Конкурсы">
+      <div class="draws-list" *ngFor="let item of draws">
+        <div>
+          <h1>{{ item.Name }}</h1>
+        </div>
+        <div>
+          <button (click)="drawDetails(item)" mat-raised-button color="primary">Подробнее</button>
+          <button (click)="deleteDraw(item.Id)" mat-raised-button color="warning">Удалить</button>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+
+
+</div>
